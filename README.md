@@ -4,21 +4,56 @@
  https://www.figma.com/design/nkL9a5XWFPCo9YQSevkRGQ/Course-Online?node-id=34-2&t=JFraF4gG2GYxqm4L-0
 ## การพัฒนาระบบการจัดการคอร์สออนไลน์ พัฒนาระบบด้วย 
 
-### Back-end
-- **Framework:** Next.js (สำหรับ API และ SSR)
+## เทคโนโลยีและเครื่องมือที่ใช้
+
+### Backend
+- **Next.js**  
+  ใช้พัฒนา API และรองรับ Server-Side Rendering (SSR) ช่วยให้ระบบทำงานเร็วและเหมาะกับ SEO
+- **Prisma ORM**  
+  เชื่อมต่อและจัดการฐานข้อมูล PostgreSQL ด้วย Object-Relational Mapping (ORM) ทำให้เขียนคำสั่งฐานข้อมูลง่ายและปลอดภัย
+- **PostgreSQL**  
+  ฐานข้อมูลเชิงสัมพันธ์หลักสำหรับจัดเก็บข้อมูลผู้ใช้ คอร์ส รายการสั่งซื้อ และข้อมูลอื่น ๆ
+- **Docker**  
+  ใช้สำหรับรันฐานข้อมูล PostgreSQL ในคอนเทนเนอร์ เพื่อความสะดวกในการตั้งค่าและจัดการฐานข้อมูล
+- **JWT (JSON Web Token)**  
+  ใช้สำหรับระบบยืนยันตัวตน (Authentication) และกำหนดสิทธิ์การเข้าถึง (Authorization) อย่างปลอดภัย
+
+### Frontend
+- **Vue.js**  
+  Framework JavaScript สำหรับสร้าง User Interface แบบ Reactive และ Component-based ช่วยให้พัฒนา UI ได้เร็วและจัดการสถานะข้อมูลง่าย
+- **Tailwind CSS / Vuetify**  
+  ใช้ตกแต่งหน้าตาเว็บให้สวยงามและรองรับการแสดงผลในทุกอุปกรณ์  
+  - Tailwind CSS เน้นเขียน CSS แบบ Utility-first  
+  - Vuetify เป็น UI Library ที่สร้างบน Vue.js พร้อม Component ให้ใช้งานจำนวนมาก
+
+---
+
 #### ฟีเจอร์หลัก:
 - การจัดการผู้ใช้ (Authentication, Authorization)
 - การจัดการคอร์ส (CRUD: Create, Read, Update, Delete)
-- การจัดการบทเรียนและเนื้อหา
-- ระบบการลงทะเบียนคอร์ส
+- ระบบการลงทะเบียนเรียนและจัดการคำสั่งซื้อคอร์ส  
+- ระบบจัดการบทเรียนและเนื้อหาในคอร์ส  
+- Dashboard สำหรับผู้สอนและผู้ดูแลระบบ  
+- ระบบ Inbox สำหรับผู้สอนตอบคำถามผู้เรียน  
+- ระบบแสดงคอร์สที่ผู้ใช้สนใจ (Favorite)  
+- ระบบจัดการสถานะคำสั่งซื้อ เช่น ยืนยัน ยกเลิก และจบคอร์ส
 - API สำหรับให้ Front-End ดึงข้อมูล
-#### เครื่องมือเพิ่มเติม:
-- **Prisma:** ORM (Object-Relational Mapping) สำหรับจัดการฐานข้อมูล PostgreSQL
-- **JWT:** สำหรับ Authentication
+
+--- 
+## หลักการทำงานเบื้องหลัง
+- ใช้ JWT สำหรับยืนยันตัวตนและจัดการสิทธิ์ผู้ใช้งาน  
+- Backend พัฒนาโดย Next.js พร้อม Prisma ORM เชื่อมต่อฐานข้อมูล PostgreSQL  
+- Frontend ใช้ Vue.js ดึงข้อมูลผ่าน API และแสดงผลแบบไดนามิก  
+- ใช้ Tailwind CSS / Vuetify เพื่อทำให้ UI ตอบสนองได้ดีในทุกหน้าจอ  
+- Modal และฟอร์มช่วยให้ผู้ใช้เพิ่ม แก้ไข หรือลบข้อมูลได้สะดวก  
+- ระบบจัดการสถานะและข้อมูลต่าง ๆ อย่างเป็นระบบ โดยใช้ Vue.js State Management  
+
+---
 
 ### ฐานข้อมูล
   - ใช้ฐานข้อมูล PostgreSQL
   - การตั้งค่าฐานข้อมูล: ใช้ Docker เพื่อสร้าง Container สำหรับ PostgreSQL
+
 #### ตารางหลัก:
 - `users`: ข้อมูลผู้ใช้งาน เช่น ผู้สอนและผู้เรียน
 - `user_favorite_courses`: ข้อมูลการกดชื่นชอบคอร์ส
@@ -30,9 +65,6 @@
 - `category`: หมวดหมู่คอร์สเรียน
 
 
-### Front-end
-- **Framework:** HTML และ Vue.js
-- **UI Framework:** ใช้ Tailwind CSS หรือ Vuetify
 #### ฟีเจอร์: หน้าจอสำหรับผู้ใช้
 - หน้าเข้าสู่ระบบ
 - หน้าสมัครสมาชิก
@@ -59,3 +91,15 @@
 - หน้า Cancel Course
 - หน้า Comple Courser 
 
+## การติดตั้งและใช้งาน
+1. ติดตั้ง Node.js และ Docker  
+2. รันฐานข้อมูล PostgreSQL ผ่าน Docker Container  
+3. ตั้งค่าฐานข้อมูลตาม schema ที่เตรียมไว้  
+4. รัน Backend ด้วยคำสั่ง `npm start` (Next.js) (email: 'emailAdmin@gmail.com', password: '!admin')
+5. รัน Front-end ด้วย  `npm run dev` 
+6. เปิด Frontend ในเว็บเบราว์เซอร์  
+7. ลงทะเบียนและเริ่มใช้งานระบบได้ทันที
+
+
+## ติดต่อ
+หากต้องการข้อมูลเพิ่มเติมหรือสอบถามเกี่ยวกับโปรเจกต์นี้ ติดต่อได้ที่ cholthicha.bfc@gmail.com 
