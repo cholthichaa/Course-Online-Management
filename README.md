@@ -1,7 +1,13 @@
 # การพัฒนาระบบการจัดการคอร์สออนไลน์
 **Figma**
 - สำหรับออกแบบการทำงานระบบทั้งหมด
- https://www.figma.com/design/nkL9a5XWFPCo9YQSevkRGQ/Course-Online?node-id=34-2&t=JFraF4gG2GYxqm4L-0
+- https://www.figma.com/design/nkL9a5XWFPCo9YQSevkRGQ/Course-Online?node-id=34-2&t=CTPSqLPECrIuXxJa-1
+#### Admin
+https://www.figma.com/proto/nkL9a5XWFPCo9YQSevkRGQ/Course-Online?node-id=37-6&p=f&t=VOrwWydDwNwXuhsA-1&scaling=min-zoom&content-scaling=fixed&page-id=34%3A2&starting-point-node-id=37%3A6
+#### User
+https://www.figma.com/proto/nkL9a5XWFPCo9YQSevkRGQ/Course-Online?node-id=179-4752&p=f&t=CTPSqLPECrIuXxJa-0&scaling=min-zoom&content-scaling=fixed&page-id=34%3A3&starting-point-node-id=75%3A10431&show-proto-sidebar=1
+
+
 ## การพัฒนาระบบการจัดการคอร์สออนไลน์ พัฒนาระบบด้วย 
 
 ## เทคโนโลยีและเครื่องมือที่ใช้
