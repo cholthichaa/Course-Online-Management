@@ -46,7 +46,7 @@ https://www.figma.com/proto/nkL9a5XWFPCo9YQSevkRGQ/Course-Online?node-id=179-475
 - API สำหรับให้ Front-End ดึงข้อมูล
 
 --- 
-## หลักการทำงานเบื้องหลัง
+## หลักการทำงาน
 - ใช้ JWT สำหรับยืนยันตัวตนและจัดการสิทธิ์ผู้ใช้งาน  
 - Backend พัฒนาโดย Next.js พร้อม Prisma ORM เชื่อมต่อฐานข้อมูล PostgreSQL  
 - Frontend ใช้ Vue.js ดึงข้อมูลผ่าน API และแสดงผลแบบไดนามิก  
